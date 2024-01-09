@@ -1,20 +1,20 @@
 const extendHex = (shortHex) => {
-  if(shortHex.charAt(0) === '#'){
-	  shortHex = shortHex.substring(1);
+  // Remove '#' symbol if it exists
+  if (shortHex.charAt(0) === '#') {
+    shortHex = shortHex.substring(1);
   }
 
-    const r = shortHex.charAt(0);
-	const g = shortHex.charAt(1);
-	const b = shortHex.charAt(2);
-	
+  // Split the short hex code into individual color components
+  const r = shortHex.charAt(0);
+  const g = shortHex.charAt(1);
+  const b = shortHex.charAt(2);
 
-	const fullHex = '#${r}${r}${g}${g}${b}${b}';
+  // Extend each color component to create the full hex code
+  const fullHex = `#${r}${r}${g}${g}${b}${b}`;
 
-	return fullHex.toUpperCase();
+  return fullHex.toUpperCase(); // Convert to uppercase for consistency
 };
 
-//Do not change the code below.
+// Do not change the code below.
 const shortHex = prompt("Enter Short Hex.");
 alert(extendHex(shortHex));
-
-
